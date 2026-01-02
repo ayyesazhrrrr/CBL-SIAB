@@ -211,9 +211,13 @@ class SIABModel:
         # Add predictions to dataframe
         df['Predicted_Label'] = [p['label'] for p in predictions]
         df['Predicted_Text'] = [p['label_text'] for p in predictions]
-        df['Probability'] = [p['probability'] for p in predictions]
-        df['Probability_Naik'] = [p['probability_naik'] for p in predictions]
-        df['Probability_Turun'] = [p['probability_turun'] for p in predictions]
+        df['Probability'] = [p['probability'] * 100 for p in predictions]  # Convert to percentage
+        df['Probability_Naik'] = [p['probability_naik'] * 100 for p in predictions]
+        df['Probability_Turun'] = [p['probability_turun'] * 100 for p in predictions]
+        df['Recommendation'] = [p['recommendation'] for p in predictions]
+        df['Recommendation_Text'] = [p['recommendation_text'] for p in predictions]
+        df['Recommendation_Reason'] = [p['recommendation_reason'] for p in predictions]
+        df['Recommendation_Color'] = [p['recommendation_color'] for p in predictions]
         
         return df
     

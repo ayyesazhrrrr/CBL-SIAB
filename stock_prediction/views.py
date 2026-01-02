@@ -76,7 +76,7 @@ def predict_manual(request):
                     return_1=data['Return_1'],
                     ma_diff=data['MA_diff'],
                     predicted_label=result['label'],
-                    probability=result['probability']
+                    probability=result['probability'] * 100  # Convert to percentage
                 )
                 
                 messages.success(request, f'Prediksi berhasil! Hasil: {result["label_text"]}')
@@ -121,14 +121,14 @@ def predict_csv(request):
                         high_price=row['High'],
                         low_price=row['Low'],
                         close_price=row['Close'],
-                        volume=row['Volume'],
+                        volume=int(row['Volume']),
                         ma5=row['MA5'],
                         ma10=row['MA10'],
                         return_value=row['Return'],
                         return_1=row['Return_1'],
                         ma_diff=row['MA_diff'],
-                        predicted_label=row['Predicted_Label'],
-                        probability=row['Probability']
+                        predicted_label=int(row['Predicted_Label']),
+                        probability=row['Probability']  # Already in percentage from ml_model
                     )
                     saved_count += 1
                 
