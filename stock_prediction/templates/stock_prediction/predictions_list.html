@@ -8,7 +8,7 @@ SIAB{% endblock %} {% block content %}
                 <span> {{ total_count }} </span> )
             </div>
             {% if total_count > 0 %}
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between flex-wrap align-items-center px-3" style="gap:0.5rem;">
                 <!--<div class="">
                     <a
                         href="{% url 'stock_prediction:export_predictions_history' %}"
@@ -17,12 +17,14 @@ SIAB{% endblock %} {% block content %}
                         <i class="bi bi-arrow-up-right-square"></i> Export
                     </a>
                 </div>-->
-                <div class="">
+                <div class="flex-shrink-1" style="max-width:100%; margin-top: 0.5rem;">
                     <a
                         href="{% url 'stock_prediction:clean_predictions_history' %}"
-                        class="btn btn-danger justify-self-content-between"
+                        class="btn btn-outline-danger btn-sm d-flex align-items-center gap-1"
+                        style="font-size:0.95rem; border-radius: 20px; padding: 0.3rem 0.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:180px;"
+                        title="Hapus seluruh riwayat prediksi"
                     >
-                        <i class="bi bi-trash"></i> Hapus Riwayat
+                        <i class="bi bi-trash" style="font-size:1rem;"></i> Hapus Riwayat
                     </a>
                 </div>
             </div>
@@ -135,9 +137,10 @@ SIAB{% endblock %} {% block content %}
         <div class="mt-4">
             <a
                 href="{% url 'stock_prediction:index' %}"
-                class="btn btn-outline-secondary"
+                class="btn btn-primary d-inline-flex align-items-center gap-2 shadow-sm"
+                style="border-radius: 20px; font-weight: 500; padding: 0.5rem 1.5rem; font-size: 1rem;"
             >
-                <i class="bi bi-arrow-left"></i> Kembali ke Home
+                <i class="bi bi-house-door-fill" style="font-size:1.2rem;"></i> Kembali ke Home
             </a>
         </div>
     </div>

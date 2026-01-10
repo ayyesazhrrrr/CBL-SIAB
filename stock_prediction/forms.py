@@ -8,7 +8,7 @@ class PredictionForm(forms.Form):
     open_price = forms.FloatField(
         label='Open Price',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 10000',
             'step': '0.01'
         })
@@ -16,7 +16,7 @@ class PredictionForm(forms.Form):
     high_price = forms.FloatField(
         label='High Price',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 10500',
             'step': '0.01'
         })
@@ -24,7 +24,7 @@ class PredictionForm(forms.Form):
     low_price = forms.FloatField(
         label='Low Price',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 9800',
             'step': '0.01'
         })
@@ -32,7 +32,7 @@ class PredictionForm(forms.Form):
     close_price = forms.FloatField(
         label='Close Price',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 10200',
             'step': '0.01'
         })
@@ -40,14 +40,14 @@ class PredictionForm(forms.Form):
     volume = forms.IntegerField(
         label='Volume',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 50000000'
         })
     )
     ma5 = forms.FloatField(
         label='MA5 (Moving Average 5 days)',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 10100',
             'step': '0.01'
         })
@@ -55,7 +55,7 @@ class PredictionForm(forms.Form):
     ma10 = forms.FloatField(
         label='MA10 (Moving Average 10 days)',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 10050',
             'step': '0.01'
         })
@@ -63,7 +63,7 @@ class PredictionForm(forms.Form):
     return_value = forms.FloatField(
         label='Return',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 0.005',
             'step': '0.0001'
         })
@@ -71,7 +71,7 @@ class PredictionForm(forms.Form):
     return_1 = forms.FloatField(
         label='Return_1 (Previous Return)',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 0.003',
             'step': '0.0001'
         })
@@ -79,7 +79,7 @@ class PredictionForm(forms.Form):
     ma_diff = forms.FloatField(
         label='MA Difference (MA5 - MA10)',
         widget=forms.NumberInput(attrs={
-            'class': 'form-control',
+            'class': 'input-pro',
             'placeholder': 'e.g., 50',
             'step': '0.01'
         })

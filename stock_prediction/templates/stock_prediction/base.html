@@ -14,18 +14,20 @@
     
     <style>
         :root {
-            --primary-color: #4f46e5;
-            --secondary-color: #7c3aed;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
-            --dark-bg: #1f2937;
-            --light-bg: #f9fafb;
+            --primary-color: #2236a8; /* biru navy */
+            --primary-color-dark: #16205c;
+            --primary-color-light: #eaf0fa;
+            --success-color: #1e88e5;
+            --danger-color: #e53935;
+            --white: #fff;
+            --gray: #f5f6fa;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gray);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         .navbar {
@@ -51,14 +53,15 @@
         
         .main-content {
             padding: 2rem 0;
+            flex: 1 0 auto;
         }
         
         .card {
             border: none;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(34, 54, 168, 0.07);
             transition: transform 0.3s, box-shadow 0.3s;
-            background: white;
+            background: var(--white);
         }
         
         .card:hover {
@@ -67,37 +70,40 @@
         }
         
         .card-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            background: var(--primary-color);
+            color: #fff;
             border-radius: 15px 15px 0 0 !important;
             padding: 1.5rem;
             font-weight: 600;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--primary-color);
             border: none;
             padding: 0.75rem 2rem;
             border-radius: 10px;
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         }
-        
         .btn-primary:hover {
+            background: var(--primary-color-dark);
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 5px 15px rgba(34, 54, 168, 0.15);
         }
         
         .btn-success {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: var(--success-color);
             border: none;
             border-radius: 10px;
+            color: #fff;
         }
-        
         .btn-danger {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            background: var(--danger-color);
             border: none;
             border-radius: 10px;
+            color: #fff;
         }
         
         .badge {
@@ -107,16 +113,17 @@
         }
         
         .badge-naik {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: var(--success-color);
+            color: #fff;
         }
-        
         .badge-turun {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            background: var(--danger-color);
+            color: #fff;
         }
         
         .stat-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background: var(--primary-color);
+            color: #fff;
             border-radius: 15px;
             padding: 2rem;
             margin-bottom: 1.5rem;
@@ -156,15 +163,16 @@
         }
         
         .table thead {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            background: var(--primary-color);
+            color: #fff;
         }
         
         footer {
             background: rgba(255, 255, 255, 0.95);
             padding: 2rem 0;
-            margin-top: 3rem;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            width: 100%;
         }
     </style>
     
@@ -226,7 +234,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center mt-5" style="background:rgba(255,255,255,0.95);box-shadow:0 -2px 8px rgba(0,0,0,0.07);">
+    <footer class="text-center" style="background:rgba(255,255,255,0.95);box-shadow:0 -2px 8px rgba(0,0,0,0.07);">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
