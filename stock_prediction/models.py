@@ -53,6 +53,7 @@ class Prediction(models.Model):
     # Prediction results
     predicted_label = models.IntegerField(choices=LABEL_CHOICES)
     probability = models.FloatField()
+    rekomendasi_aksi = models.CharField(max_length=16, null=True, blank=True, help_text="Rekomendasi aksi trading: BUY/SELL")
     
     created_at = models.DateTimeField(auto_now_add=True)
     

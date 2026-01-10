@@ -79,6 +79,7 @@ def predict_manual(request):
                     ma_diff=data["MA_diff"],
                     predicted_label=result["label"],
                     probability=result["probability"] * 100,  # Convert to percentage
+                    rekomendasi_aksi=result["recommendation"],
                 )
 
                 messages.success(

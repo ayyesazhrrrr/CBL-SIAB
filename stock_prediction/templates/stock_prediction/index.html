@@ -5,36 +5,25 @@
 {% block content %}
 <div class="row">
     <div class="col-12 text-center mb-5">
-        <div class="p-4 rounded-4" style="background: linear-gradient(90deg,#a7bfff 60%,#f3e7ff 100%);box-shadow:0 8px 32px rgba(79,70,229,0.10);">
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4">
-                <img src="https://img.icons8.com/color/96/000000/handshake.png" style="height:70px;">
-                <div>
-                    <h1 class="display-5 fw-bold text-primary mb-2">Selamat Datang di SIAB Stock Prediction!</h1>
-                    <p class="lead text-secondary mb-1">Halo, siap membantu prediksi saham BBCA dengan mudah dan interaktif 😊</p>
-                    <span class="badge bg-primary bg-opacity-75 fs-6">Powered by XGBoost Machine Learning</span>
-                </div>
-            </div>
+        <div class="p-4 rounded-4" style="background: linear-gradient(90deg,#4f46e5 60%,#7c3aed 100%);box-shadow:0 8px 32px rgba(79,70,229,0.12);">
+            <h1 class="display-4 fw-bold text-white mb-2 d-flex justify-content-center align-items-center gap-2">
+                <img src="https://img.icons8.com/fluency/48/000000/line-chart.png" style="height:40px;"> SIAB Stock Prediction
+            </h1>
+            <p class="lead text-white mb-0">Sistem Prediksi Saham BBCA <span class="fw-bold text-warning">XGBoost Machine Learning</span></p>
         </div>
     </div>
 </div>
 
 <!-- Statistics Cards -->
-<div class="row mb-4">
-    <div class="col-md-4">
-        <div class="stat-card text-center">
-            <i class="bi bi-cpu display-4 mb-3"></i>
-            <h3>{{ model_info.model_type }}</h3>
-            <p>Model Type</p>
-        </div>
-    </div>
-    <div class="col-md-4">
+<div class="row mb-4 justify-content-center">
+    <div class="col-md-5 mb-3">
         <div class="stat-card text-center">
             <i class="bi bi-graph-up display-4 mb-3"></i>
             <h3>{{ total_predictions }}</h3>
             <p>Total Prediksi</p>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5 mb-3">
         <div class="stat-card text-center">
             <i class="bi bi-database display-4 mb-3"></i>
             <h3>{{ total_stock_data }}</h3>
@@ -115,24 +104,24 @@
 <!-- Quick Actions -->
 <div class="row mb-4 justify-content-center">
     <div class="col-md-5 mb-3">
-        <div class="card text-center h-100 border-0 shadow rounded-4" style="background: #f8fafc;">
+        <div class="card text-center h-100 border-0 shadow-lg rounded-4">
             <div class="card-body d-flex flex-column">
-                <i class="bi bi-emoji-smile display-1 text-info mb-3"></i>
+                <i class="bi bi-calculator display-1 text-primary mb-3"></i>
                 <h5 class="card-title fw-bold">Prediksi Manual</h5>
-                <p class="card-text flex-grow-1">Masukkan data saham secara manual, SIAB akan membantu memberikan prediksi terbaik untukmu!</p>
-                <a href="{% url 'stock_prediction:predict_manual' %}" class="btn btn-info btn-lg rounded-pill mt-2 text-white">
+                <p class="card-text flex-grow-1">Input data saham secara manual untuk mendapatkan prediksi yang akurat.</p>
+                <a href="{% url 'stock_prediction:predict_manual' %}" class="btn btn-primary btn-lg rounded-pill mt-2">
                     <i class="bi bi-arrow-right"></i> Mulai Prediksi
                 </a>
             </div>
         </div>
     </div>
     <div class="col-md-5 mb-3">
-        <div class="card text-center h-100 border-0 shadow rounded-4" style="background: #f8fafc;">
+        <div class="card text-center h-100 border-0 shadow-lg rounded-4">
             <div class="card-body d-flex flex-column">
-                <i class="bi bi-bar-chart-steps display-1 text-success mb-3"></i>
-                <h5 class="card-title fw-bold">Visualisasi Interaktif</h5>
-                <p class="card-text flex-grow-1">Lihat grafik dan hasil prediksi dengan tampilan yang mudah dipahami dan interaktif.</p>
-                <a href="{% url 'stock_prediction:visualize' %}" class="btn btn-success btn-lg rounded-pill mt-2">
+                <i class="bi bi-bar-chart display-1 text-danger mb-3"></i>
+                <h5 class="card-title fw-bold">Visualisasi</h5>
+                <p class="card-text flex-grow-1">Lihat visualisasi data dan hasil prediksi dalam bentuk chart interaktif.</p>
+                <a href="{% url 'stock_prediction:visualize' %}" class="btn btn-danger btn-lg rounded-pill mt-2">
                     <i class="bi bi-eye"></i> Lihat Chart
                 </a>
             </div>
