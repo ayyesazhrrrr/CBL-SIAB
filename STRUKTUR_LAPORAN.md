@@ -1,13 +1,13 @@
 # STRUKTUR LAPORAN PROYEK SIAB
-## Stock Investment Analysis and Prediction System
+## Case Based Learning: Sistem Informasi untuk Analitik Bisnis
 
 ---
 
 ## COVER/HALAMAN JUDUL
-- Judul Proyek: **Sistem Prediksi Harga Saham Menggunakan Machine Learning**
+- Judul Proyek: **Desain dan Implementasi Sistem Informasi dan Analitik Bisnis untuk Pengambilan Keputusan Strategis (Studi Kasus: Prediksi Saham BBCA)**
 - Logo Institusi
 - Nama Kelompok & Anggota (NIM)
-- Nama Dosen Pembimbing
+- Nama Dosen Pembimbing: Esi Putri Silmina, S.T., M.Cs.
 - Program Studi
 - Tanggal Penyusunan
 
@@ -52,55 +52,48 @@
 ## BAB I: PENDAHULUAN
 
 ### 1.1 Latar Belakang
-**Isi yang harus dimasukkan:**
-- Pentingnya pasar saham dalam investasi
-- Tantangan dalam memprediksi harga saham
-- Peran teknologi dan machine learning dalam prediksi finansial
-- Kebutuhan sistem prediksi yang akurat untuk investor
-- Alasan pemilihan saham BBCA.JK sebagai studi kasus
+- Pentingnya pengambilan keputusan berbasis data di bisnis modern
+- Tantangan prediksi harga saham di pasar modal
+- Peran data mining dan machine learning dalam analitik bisnis
+- Studi kasus nyata: prediksi harga saham BBCA untuk mendukung keputusan investasi
 
 ### 1.2 Rumusan Masalah
-**Isi yang harus dimasukkan:**
-- Bagaimana membangun sistem prediksi harga saham yang akurat?
-- Model machine learning apa yang paling efektif untuk prediksi saham?
-- Bagaimana mengintegrasikan model ML ke dalam aplikasi web?
-- Bagaimana memberikan visualisasi yang membantu pengambilan keputusan?
+- Bagaimana merancang sistem informasi analitik bisnis berbasis data mining untuk kasus nyata?
+- Bagaimana memilih dan mengimplementasikan metode data mining yang efektif?
+- Bagaimana mengintegrasikan model ML ke aplikasi web yang user friendly?
+- Bagaimana mengevaluasi performa sistem dan model?
 
 ### 1.3 Tujuan
-**Isi yang harus dimasukkan:**
-- Mengembangkan sistem prediksi harga saham berbasis web
-- Mengimplementasikan model machine learning untuk prediksi
-- Menyediakan interface yang user-friendly
-- Memberikan visualisasi data historis dan hasil prediksi
-- Mengevaluasi akurasi model yang digunakan
+- Merancang dan mengimplementasikan sistem informasi analitik bisnis berbasis data mining
+- Mengembangkan aplikasi web prediksi harga saham BBCA
+- Mengintegrasikan model XGBoost ke dalam sistem
+- Menyediakan visualisasi dan riwayat prediksi
+- Melakukan evaluasi performa sistem dan model
 
 ### 1.4 Batasan Masalah
-**Isi yang harus dimasukkan:**
-- Fokus pada saham BBCA.JK (Bank Central Asia)
-- Menggunakan data historis 10 tahun
-- Fitur input: Open, High, Low, Close, Volume
-- Platform: Web application menggunakan Django
-- Model: [sebutkan model yang digunakan, misalnya LSTM, Random Forest, dll]
+- Studi kasus: prediksi harga saham BBCA.JK
+- Dataset: sumber publik (Yahoo Finance, Kaggle, dsb), 10 tahun terakhir
+- Fitur input: Open, High, Low, Close, Volume, MA5, MA10, Return, Return_1, MA_diff
+- Platform: Web application (Django)
+- Model: XGBoost Classifier
 
 ### 1.5 Manfaat
-**Isi yang harus dimasukkan:**
-- **Bagi Investor:** Membantu pengambilan keputusan investasi
-- **Bagi Akademisi:** Referensi untuk penelitian serupa
-- **Bagi Pengembang:** Contoh implementasi ML dalam web app
-- **Bagi Tim:** Pengalaman dalam pengembangan proyek
+- **Bagi Bisnis/Investor:** Mendukung keputusan investasi berbasis data
+- **Bagi Akademisi:** Studi kasus nyata implementasi data mining
+- **Bagi Pengembang:** Contoh integrasi ML dan web app
+- **Bagi Tim:** Pengalaman proyek kolaboratif dan presentasi
 
-### 1.6 Metodologi Penelitian
-**Isi yang harus dimasukkan:**
-- Studi literatur
-- Pengumpulan data
-- Pengembangan model
-- Implementasi sistem
-- Pengujian dan evaluasi
-- Dokumentasi
+### 1.6 Metodologi
+- Studi literatur (jurnal, white paper, dokumentasi)
+- Pengumpulan dataset publik
+- Preprocessing & feature engineering
+- Training & evaluasi model data mining
+- Implementasi sistem web
+- Pengujian sistem & analisis hasil
+- Dokumentasi, demo, presentasi
 
 ### 1.7 Sistematika Penulisan
-**Isi yang harus dimasukkan:**
-- Ringkasan isi setiap bab dalam laporan
+- Ringkasan isi setiap bab (lihat rubrik dan checklist di bawah)
 
 ---
 
@@ -228,9 +221,9 @@
 
 ---
 
-## BAB IV: IMPLEMENTASI SISTEM
+## BAB IV: PERANCANGAN DAN IMPLEMENTASI SISTEM INFORMASI ANALITIK BISNIS
 
-### 4.1 Lingkungan Pengembangan
+### 4.1 Studi Kasus dan Dataset Publik
 **Isi yang harus dimasukkan:**
 - Spesifikasi hardware
 - Sistem operasi
@@ -238,13 +231,13 @@
 - Library dan dependencies (dari requirements.txt)
 - Versi Python, Django, dll
 
-### 4.2 Implementasi Database
+### 4.2 Analisis Kebutuhan Bisnis & User
 **Isi yang harus dimasukkan:**
 - Screenshot struktur database
 - Kode model Django (models.py)
 - Penjelasan setiap model dan field
 
-### 4.3 Implementasi Machine Learning
+### 4.3 Desain Arsitektur Sistem (diagram, flowchart, ERD)
 **Isi yang harus dimasukkan:**
 
 #### 4.3.1 Preprocessing Data
@@ -264,14 +257,14 @@
 - Cara menyimpan model
 - Cara memuat model untuk prediksi
 
-### 4.4 Implementasi Backend
+### 4.4 Desain Database & Integrasi Data Mining
 **Isi yang harus dimasukkan:**
 - Kode views.py (penjelasan setiap function)
 - Kode urls.py (routing)
 - Kode forms.py (validasi input)
 - Integrasi model ML dengan Django
 
-### 4.5 Implementasi Frontend
+### 4.5 Desain Antarmuka (UI/UX, wireframe, mockup)
 **Isi yang harus dimasukkan:**
 - Screenshot dan kode setiap halaman:
   - **Homepage (index.html):** Penjelasan dan screenshot
@@ -283,7 +276,7 @@
   - **History (predictions_list.html):** Daftar prediksi
 - Kode HTML, CSS, JavaScript penting
 
-### 4.6 Implementasi Fitur
+### 4.6 Implementasi Fitur (Prediksi Manual, CSV, Visualisasi, Riwayat, API)
 **Isi yang harus dimasukkan:**
 
 ### 4.6.1 Fitur Prediksi Manual
@@ -308,14 +301,14 @@
 - Halaman riwayat: tampilkan, hapus, dan kelola prediksi
 - Fitur filter/search riwayat
 
-### 4.7 Integrasi Sistem & Alur Kerja
+### 4.7 Integrasi Sistem, Alur Data, dan Error Handling
 - User input data (manual/CSV) → sistem validasi → hitung indikator teknikal → data diformat → prediksi dengan model XGBoost (file .pkl hasil training notebook) → hasil (label, probability, rekomendasi) ditampilkan & disimpan ke database → user bisa lihat riwayat & visualisasi.
 - Semua prediksi di web menggunakan model yang sama dengan notebook (konsistensi hasil).
 - Error handling: validasi input, notifikasi error user-friendly, log error di backend.
 
 ---
 
-## BAB V: PENGUJIAN DAN EVALUASI SISTEM
+## BAB V: PENGUJIAN, EVALUASI, DAN DEMO SISTEM
 
 ### 5.1 Pengujian Model Machine Learning
 **Isi yang harus dimasukkan:**
@@ -336,7 +329,7 @@
 - Hasil cross validation
 - Analisis variance dan bias
 
-### 5.2 Pengujian Sistem
+### 5.2 Pengujian Sistem & Demo
 **Isi yang harus dimasukkan:**
 
 #### 5.2.1 Pengujian Unit
@@ -365,7 +358,7 @@
 - Load testing
 - Resource usage
 
-### 5.3 User Acceptance Testing (UAT)
+### 5.3 User Acceptance Testing (UAT) & Presentasi
 - Kuesioner untuk user (apakah mudah digunakan, hasil mudah dipahami, dsb)
 - Hasil feedback user
 - Analisis kepuasan user dan saran perbaikan
@@ -428,10 +421,11 @@
 - Error log
 - Screenshot detail setiap fitur
 
-### Lampiran D: User Manual
+### Lampiran D: User Manual & Demo
 - Panduan instalasi
-- Panduan penggunaan sistem
+- Panduan penggunaan sistem (web, API, CSV)
 - FAQ
+- Link/penjelasan demo aplikasi
 
 ### Lampiran E: Dokumentasi API (jika ada)
 - Endpoint yang tersedia
@@ -442,12 +436,11 @@
 - Hasil kuesioner
 
 ### Lampiran G: Surat-surat (jika ada)
-- Surat tugas
-- Surat keterangan penelitian
+- Surat tugas, surat keterangan penelitian, dsb
 
 ---
 
-## CHECKLIST KELENGKAPAN LAPORAN
+## CHECKLIST KELENGKAPAN & RUBRIK PENILAIAN
 
 ### Format Dokumen
 - [ ] Font: Times New Roman 12pt (isi), 14pt (sub judul), 16pt (judul bab)
@@ -457,37 +450,23 @@
 - [ ] Justify alignment untuk isi
 - [ ] Bahasa Indonesia yang baik dan benar
 
-### Komponen Wajib
-- [ ] Cover yang rapi dan profesional
-- [ ] Halaman pengesahan dengan tanda tangan
-- [ ] Kata pengantar
-- [ ] Daftar isi dengan nomor halaman
-- [ ] Daftar gambar (minimal 10 gambar)
-- [ ] Daftar tabel (minimal 5 tabel)
-- [ ] 6 Bab lengkap dengan sub-bab
-- [ ] Daftar pustaka (minimal 15 referensi)
-- [ ] Lampiran lengkap
+### Komponen Wajib & Rubrik
+- [ ] Cover, pengesahan, kata pengantar, daftar isi, gambar, tabel, pustaka, lampiran
+- [ ] Struktur & sistematika penulisan (20%)
+- [ ] Deskripsi arsitektur & teknologi (20%)
+- [ ] Langkah teknis & implementasi (20%)
+- [ ] Evaluasi & analisis (20%)
+- [ ] Source code (10%)
+- [ ] Referensi (10%)
 
-### Konten Teknis
-- [ ] Diagram arsitektur sistem
-- [ ] ERD/Database schema
-- [ ] Use case diagram
-- [ ] Flowchart algoritma
-- [ ] Wireframe/mockup UI
-- [ ] Screenshot semua fitur
-- [ ] Kode program penting
-- [ ] Grafik hasil training model
-- [ ] Tabel metrik evaluasi
-- [ ] Tabel test case
-- [ ] Grafik perbandingan actual vs predicted
+### Konten Teknis & Demo
+- [ ] Diagram arsitektur sistem, ERD, flowchart, use case
+- [ ] Wireframe/mockup UI, screenshot fitur, demo aplikasi
+- [ ] Kode program penting, hasil training model, tabel evaluasi, test case, grafik hasil
 
-### Review Akhir
-- [ ] Pengecekan ejaan dan grammar
-- [ ] Konsistensi format
-- [ ] Semua gambar dan tabel diberi caption dan nomor
-- [ ] Semua referensi disebutkan di daftar pustaka
-- [ ] Nomor halaman benar
-- [ ] PDF final untuk submission
+### Review Akhir & Format Output
+- [ ] Pengecekan ejaan, format, caption, referensi, nomor halaman
+- [ ] Output: PPT (SIAB_PPTKelompokX.pptx), Laporan (SIAB_LaporanX.pdf/jpg), Source code, Demo
 
 ---
 
