@@ -57,9 +57,9 @@ def predict_manual(request):
                     "Volume": form.cleaned_data["volume"],
                     "MA5": form.cleaned_data["ma5"],
                     "MA10": form.cleaned_data["ma10"],
-                    "Return": form.cleaned_data["return_value"],
-                    "Return_1": form.cleaned_data["return_1"],
-                    "MA_diff": form.cleaned_data["ma5"] - form.cleaned_data["ma10"], # Calculate automatically
+                    "Return": 0.0,  # Set to default value (removed from form)
+                    "Return_1": 0.0,  # Set to default value (removed from form)
+                    "MA_diff": form.cleaned_data["ma5"] - form.cleaned_data["ma10"],  # Calculate automatically
                 }
 
                 # Make prediction

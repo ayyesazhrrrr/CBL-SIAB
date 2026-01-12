@@ -60,22 +60,7 @@ class PredictionForm(forms.Form):
             'step': '0.01'
         })
     )
-    return_value = forms.FloatField(
-        label='Return',
-        widget=forms.NumberInput(attrs={
-            'class': 'input-pro',
-            'placeholder': 'e.g., 0.005',
-            'step': '0.0001'
-        })
-    )
-    return_1 = forms.FloatField(
-        label='Return_1 (Previous Return)',
-        widget=forms.NumberInput(attrs={
-            'class': 'input-pro',
-            'placeholder': 'e.g., 0.003',
-            'step': '0.0001'
-        })
-    )
+
 
 
 class CSVUploadForm(forms.Form):

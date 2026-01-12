@@ -1,4 +1,4 @@
-{% extends 'stock_prediction/base.html' %}
+﻿{% extends 'stock_prediction/base.html' %}
 
 {% block title %}Prediksi Manual - SIAB{% endblock %}
 
@@ -110,15 +110,13 @@
                             <label class="input-label">{{ form.open_price.label }}</label>
                             {{ form.open_price }}
                             <span class="input-helper">Harga pembukaan saham</span>
-                            {% if form.open_price.errors %}<span class="input-error">{{ form.open_price.errors
-                                }}</span>{% endif %}
+                            {% if form.open_price.errors %}<span class="input-error">{{ form.open_price.errors }}</span>{% endif %}
                         </div>
                         <div class="input-col">
                             <label class="input-label">{{ form.high_price.label }}</label>
                             {{ form.high_price }}
                             <span class="input-helper">Harga tertinggi</span>
-                            {% if form.high_price.errors %}<span class="input-error">{{ form.high_price.errors
-                                }}</span>{% endif %}
+                            {% if form.high_price.errors %}<span class="input-error">{{ form.high_price.errors }}</span>{% endif %}
                         </div>
                     </div>
                     <div class="input-row">
@@ -126,15 +124,13 @@
                             <label class="input-label">{{ form.low_price.label }}</label>
                             {{ form.low_price }}
                             <span class="input-helper">Harga terendah</span>
-                            {% if form.low_price.errors %}<span class="input-error">{{ form.low_price.errors }}</span>{%
-                            endif %}
+                            {% if form.low_price.errors %}<span class="input-error">{{ form.low_price.errors }}</span>{% endif %}
                         </div>
                         <div class="input-col">
                             <label class="input-label">{{ form.close_price.label }}</label>
                             {{ form.close_price }}
                             <span class="input-helper">Harga penutupan</span>
-                            {% if form.close_price.errors %}<span class="input-error">{{ form.close_price.errors
-                                }}</span>{% endif %}
+                            {% if form.close_price.errors %}<span class="input-error">{{ form.close_price.errors }}</span>{% endif %}
                         </div>
                     </div>
                     <div class="input-row">
@@ -142,8 +138,7 @@
                             <label class="input-label">{{ form.volume.label }}</label>
                             {{ form.volume }}
                             <span class="input-helper">Volume transaksi</span>
-                            {% if form.volume.errors %}<span class="input-error">{{ form.volume.errors }}</span>{% endif
-                            %}
+                            {% if form.volume.errors %}<span class="input-error">{{ form.volume.errors }}</span>{% endif %}
                         </div>
                     </div>
 
@@ -161,22 +156,6 @@
                             {{ form.ma10 }}
                             <span class="input-helper">MA10 (Moving Average 10 hari)</span>
                             {% if form.ma10.errors %}<span class="input-error">{{ form.ma10.errors }}</span>{% endif %}
-                        </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-col">
-                            <label class="input-label">{{ form.return_value.label }}</label>
-                            {{ form.return_value }}
-                            <span class="input-helper">Return</span>
-                            {% if form.return_value.errors %}<span class="input-error">{{ form.return_value.errors
-                                }}</span>{% endif %}
-                        </div>
-                        <div class="input-col">
-                            <label class="input-label">{{ form.return_1.label }}</label>
-                            {{ form.return_1 }}
-                            <span class="input-helper">Return_1 (Previous Return)</span>
-                            {% if form.return_1.errors %}<span class="input-error">{{ form.return_1.errors }}</span>{%
-                            endif %}
                         </div>
                     </div>
 
@@ -199,8 +178,7 @@
             <div class="card-body">
                 <h6><i class="bi bi-info-circle text-primary"></i> Bantuan</h6>
                 <p class="mb-0 small text-muted">
-                    <strong>Tips:</strong> Jika Anda tidak memiliki nilai untuk technical indicators (MA5, MA10, Return,
-                    dll),
+                    <strong>Tips:</strong> Jika Anda tidak memiliki nilai untuk technical indicators (MA5, MA10),
                     Anda dapat menggunakan fitur <a href="{% url 'stock_prediction:predict_csv' %}">Upload CSV</a>
                     yang akan menghitung semua indicators secara otomatis.
                 </p>
