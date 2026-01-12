@@ -1,6 +1,6 @@
-{% extends 'stock_prediction/base.html' %} 
+{% extends 'stock_prediction/base.html' %}
 
-{% block title %}Visualisasi - SIAB{% endblock %} 
+{% block title %}Visualisasi - SIAB{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -19,12 +19,9 @@
                 <i class="bi bi-pie-chart"></i> Distribusi Prediksi
             </div>
             <div class="card-body">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-md-6">
                         <canvas id="predictionPieChart"></canvas>
-                    </div>
-                    <div class="col-md-6">
-                        <canvas id="probabilityChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -52,8 +49,7 @@
                                 <td>Rp {{ pred.close_price|floatformat:0 }}</td>
                                 <td>
                                     <span
-                                        class="badge {% if pred.predicted_label == 1 %}badge-naik{% else %}badge-turun{% endif %}"
-                                    >
+                                        class="badge {% if pred.predicted_label == 1 %}badge-naik{% else %}badge-turun{% endif %}">
                                         {{ pred.get_label_display_custom }}
                                     </span>
                                 </td>
@@ -67,10 +63,7 @@
         </div>
 
         <div class="mt-4">
-            <a
-                href="{% url 'stock_prediction:index' %}"
-                class="btn btn-outline-secondary"
-            >
+            <a href="{% url 'stock_prediction:index' %}" class="btn btn-outline-secondary">
                 <i class="bi bi-arrow-left"></i> Kembali ke Home
             </a>
         </div>
@@ -79,6 +72,10 @@
 {% endblock %} {% block extra_js %}
 <script>
     const chartData = {{ chart_data| safe }};
+    console.log('Chart Data:', chartData);
+    console.log('Dates:', chartData.dates);
+    console.log('Close Prices:', chartData.close_prices);
+
 
     // Price Chart
     const priceCtx = document.getElementById('priceChart').getContext('2d');
@@ -147,42 +144,6 @@
         }
     });
 
-    // Probability Chart
-    const probCtx = document.getElementById('probabilityChart').getContext('2d');
-    new Chart(probCtx, {
-        type: 'bar',
-        data: {
-            labels: chartData.dates,
-            datasets: [{
-                label: 'Probability (%)',
-                data: chartData.probabilities.reverse(),
-                backgroundColor: chartData.predictions.map(p =>
-                    p === 'Naik' ? 'rgba(16, 185, 129, 0.7)' : 'rgba(239, 68, 68, 0.7)'
-                ),
-                borderColor: chartData.predictions.map(p =>
-                    p === 'Naik' ? 'rgb(16, 185, 129)' : 'rgb(239, 68, 68)'
-                ),
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Confidence Level'
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100
-                }
-            }
-        }
-    });
+
 </script>
 {% endblock %}
