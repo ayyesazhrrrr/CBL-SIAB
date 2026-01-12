@@ -35,6 +35,33 @@ cd C:\Users\putri\SIAB_CBL
 python manage.py runserver
 ```
 
+## 🔁 Otomatisasi Setup (Windows) 🔧
+
+> **Catatan penting:** Saat menyalin perintah, **salin hanya baris perintah** — jangan sertakan prompt seperti `(venv) PS>` atau tautan/markdown. Contoh benar: `python manage.py runserver`.
+
+- PowerShell (direkomendasikan):
+```powershell
+# Jalankan sekali untuk setup (membuat venv, install requirements, migrate) dan langsung menjalankan server:
+.\setup.ps1
+# Jika hanya ingin setup tanpa menjalankan server:
+.\setup.ps1 -NoRun
+# Untuk hanya menjalankan server (menggunakan venv yang sudah dibuat):
+.\run_server.ps1
+```
+
+- Command Prompt (CMD):
+```cmd
+setup.bat
+# lalu
+run_server.bat
+```
+
+> Catatan: Jika PowerShell menolak mengeksekusi skrip, jalankan:
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+```
+
+
 ## 📝 Catatan Penting:
 
 - Model XGBoost akan di-load otomatis dari `siab_model.pkl`

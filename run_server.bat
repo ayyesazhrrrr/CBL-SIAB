@@ -1,0 +1,10 @@
+@echo off
+REM run_server.bat - Activate venv and start Django dev server
+if not exist venv\Scripts\activate.bat (
+  echo Virtual environment not found. Run setup.bat first.
+  pause
+  exit /b 1
+)
+
+call venv\Scripts\activate.bat
+python manage.py runserver
