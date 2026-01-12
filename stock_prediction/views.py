@@ -59,7 +59,7 @@ def predict_manual(request):
                     "MA10": form.cleaned_data["ma10"],
                     "Return": form.cleaned_data["return_value"],
                     "Return_1": form.cleaned_data["return_1"],
-                    "MA_diff": form.cleaned_data["ma_diff"],
+                    "MA_diff": form.cleaned_data["ma5"] - form.cleaned_data["ma10"], # Calculate automatically
                 }
 
                 # Make prediction
@@ -249,7 +249,9 @@ def api_predict(request):
             "MA10",
             "Return",
             "Return_1",
-            "MA_diff",
+            "MA10",
+            "Return",
+            "Return_1",
         ]
 
         for field in required_fields:
@@ -257,6 +259,10 @@ def api_predict(request):
                 return JsonResponse(
                     {"error": f"Missing required field: {field}"}, status=400
                 )
+
+        # Calculate MA_diff if not provided
+        if "MA_diff" not in data:
+            data["MA_diff"] = data["MA5"] - data["MA10"]
 
         # Make prediction
         model = get_model()

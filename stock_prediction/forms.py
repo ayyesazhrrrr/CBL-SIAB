@@ -76,14 +76,6 @@ class PredictionForm(forms.Form):
             'step': '0.0001'
         })
     )
-    ma_diff = forms.FloatField(
-        label='MA Difference (MA5 - MA10)',
-        widget=forms.NumberInput(attrs={
-            'class': 'input-pro',
-            'placeholder': 'e.g., 50',
-            'step': '0.01'
-        })
-    )
 
 
 class CSVUploadForm(forms.Form):
